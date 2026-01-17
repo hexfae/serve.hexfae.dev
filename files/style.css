@@ -1,0 +1,88 @@
+html {
+    --background: #fae;
+    --foreground: #bfa;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    color: var(--foreground);
+    padding-top: 2rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+#title,
+article {
+    border: 0.5rem solid var(--foreground);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+article {
+    max-width: 960px;
+    display: flex;
+}
+
+article > section {
+    flex: 2;
+}
+
+article > img {
+    flex: 3;
+    width: 100%;
+    padding-left: 1rem;
+    margin-left: 1rem;
+    border-left: 0.5rem solid var(--foreground);
+    border-radius: 0 1rem 1rem 0;
+}
+
+h2 {
+    font-family: monospace;
+}
+
+a {
+    color: var(--foreground);
+}
+
+article > section > a {
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+article > section img {
+    height: 2rem;
+}
+
+#tape {
+    display: flex;
+    max-width: 960px;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow:
+        inset 16px 0 8px 4px var(--background),
+        inset -16px 0 8px 4px var(--background);
+}
+
+#tape > p {
+    z-index: -1; /* make "files & " text appear behind inner shadow */
+    font-family: monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-right: 1rem;
+    animation: scroll-left 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+}
