@@ -23,6 +23,7 @@ article {
 article {
     max-width: 960px;
     display: flex;
+    margin-bottom: 1rem;
 }
 
 article > section {
